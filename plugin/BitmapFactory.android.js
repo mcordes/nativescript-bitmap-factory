@@ -88,10 +88,14 @@ AndroidBitmap.prototype._dispose = function(action, tag) {
 };
 
 // [INTERNAL] _drawLine()
-AndroidBitmap.prototype._drawLine = function(start, end, color) {
+AndroidBitmap.prototype._drawLine = function(start, end, color, lineWidth) {
+    var paint = this.__createPaint(color);
+    paint.setStyle(android.graphics.Paint.Style.STROKE);
+    paint.setStrokeWidth(lineWidth || 1.0);
+
     this.__canvas.drawLine(start.x, start.y,
                            end.x, end.y,
-                           this.__createPaint(color));
+                           paint);
 };
 
 // [INTERNAL] _drawOval()

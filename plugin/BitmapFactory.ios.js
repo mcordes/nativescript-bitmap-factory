@@ -166,14 +166,14 @@ iOSImage.prototype._dispose = function(action, tag) {
 };
 
 // [INTERNAL] _drawLine()
-iOSImage.prototype._drawLine = function(start, end, color) {
+iOSImage.prototype._drawLine = function(start, end, color, lineWidth) {
     color = this.__toIOSColor(color);
 
     this.__onImageContext(function(context, tag, oldImage) {
         CGContextSetRGBStrokeColor(context,
                                    color.r, color.g, color.b, color.a);
 
-        CGContextSetLineWidth(context, 1.0);
+        CGContextSetLineWidth(context, lineWidth || 1.0);
 
         CGContextMoveToPoint(context, start.x, start.y);
         CGContextAddLineToPoint(context,

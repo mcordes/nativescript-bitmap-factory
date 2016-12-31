@@ -304,7 +304,7 @@ interface IBitmap {
      * Draws a line.
      */
     drawLine(start: IPoint2D | string, end: IPoint2D | string,
-             color?: string | number | IArgb): IBitmap;
+             color?: string | number | IArgb, lineWidth?: number): IBitmap;
 
     /**
      * Draws an oval circle.
