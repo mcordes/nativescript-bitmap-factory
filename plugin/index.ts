@@ -286,7 +286,7 @@ export interface IBitmap {
      * @throws At least one input value is invalid.
      */
     drawLine(start: IPoint2D | string, end: IPoint2D | string,
-             color?: string | number | IArgb): IBitmap;
+             color?: string | number | IArgb, lineWidth?: number): IBitmap;
 
     /**
      * Draws an oval circle.
